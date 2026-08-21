@@ -223,6 +223,7 @@ export default function Footer() {
         <p className="text-xs" style={{ color: '#9ca3af' }}>
           © 2025 NOVA Fashion. All rights reserved.
         </p>
+        <p className="text-xs" style={{ color: '#9ca3af' }}>Designed &amp; Developed by <a href="https://www.infirexa.tech" target="_blank" rel="noopener noreferrer">Infirexa</a></p>
         <div className="flex items-center gap-2 flex-wrap justify-center">
           {['VISA', 'Mastercard', 'AMEX', 'PayPal', 'Apple Pay', 'Klarna'].map((method) => (
             <span

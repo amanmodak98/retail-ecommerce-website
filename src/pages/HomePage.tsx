@@ -137,7 +137,7 @@ export function ProductCard({ product }: { product: Product }) {
 }
 
 // ---- Section wrapper with useInView animation ----
-function Section({ children, className = '' }: { children: React.ReactNode; className?: string }) {
+function Section({ children, className = '', style }: { children: React.ReactNode; className?: string; style?: React.CSSProperties }) {
   const ref = useRef<HTMLDivElement>(null)
   const inView = useInView(ref, { once: true, margin: '-80px' })
   return (
@@ -147,6 +147,7 @@ function Section({ children, className = '' }: { children: React.ReactNode; clas
       animate={inView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.6, ease: 'easeOut' }}
       className={className}
+      style={style}
     >
       {children}
     </motion.section>

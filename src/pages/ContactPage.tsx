@@ -371,10 +371,10 @@ export default function ContactPage() {
               <table className="w-full text-sm" style={{ background: '#1a1a1f' }}>
                 <thead>
                   <tr style={{ borderBottom: '1px solid #252530' }}>
-                    {activeSizeTab === 'women'
+                    {(activeSizeTab === 'women'
                       ? ['NOVA', 'EU', 'UK', 'US', 'Bust (cm)', 'Waist (cm)', 'Hips (cm)']
                       : ['NOVA', 'EU', 'UK', 'US', 'Chest (cm)', 'Waist (cm)', 'Hips (cm)']
-                    }.map((h) => (
+                    ).map((h) => (
                       <th key={h} className="px-4 py-3 text-left text-xs font-semibold uppercase tracking-widest"
                         style={{ color: '#9ca3af' }}>
                         {h}
