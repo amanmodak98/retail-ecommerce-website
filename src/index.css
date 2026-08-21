@@ -1,0 +1,83 @@
+@import "tailwindcss";
+
+@theme {
+  --color-purple: #7c3aed;
+  --color-purple-light: #a78bfa;
+  --color-coral: #f87171;
+  --color-dark: #0d0d0f;
+  --color-surface: #1a1a1f;
+  --color-card: #252530;
+  --color-white-text: #f9fafb;
+  --color-muted: #9ca3af;
+  --font-syne: "Syne", sans-serif;
+  --font-inter: "Inter", system-ui, sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #0d0d0f;
+  color: #f9fafb;
+  font-family: "Inter", system-ui, sans-serif;
+  overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0d0d0f;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #7c3aed;
+  border-radius: 3px;
+}
+
+@keyframes ticker-scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.ticker-track {
+  animation: ticker-scroll 25s linear infinite;
+  display: flex;
+  white-space: nowrap;
+  width: max-content;
+}
+
+.ticker-track:hover {
+  animation-play-state: paused;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-12px); }
+}
+
+.float-anim {
+  animation: float 5s ease-in-out infinite;
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, #7c3aed, #f87171);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hero-gradient-text {
+  background: linear-gradient(135deg, #a78bfa 0%, #f87171 60%, #fbbf24 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
