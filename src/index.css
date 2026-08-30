@@ -1,4 +1,10 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700;800&display=swap');
+
 @import "tailwindcss";
+
+/* Import Design Tokens */
+@import "./styles/design-tokens.css";
 
 @theme {
   --color-purple: #7c3aed;
@@ -13,71 +19,275 @@
   --font-inter: "Inter", system-ui, sans-serif;
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+@layer base {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    background: var(--color-dark-900);
+    color: var(--color-white-text);
+    font-family: var(--font-sans);
+    font-weight: var(--font-normal);
+    line-height: var(--leading-relaxed);
+    overflow-x: hidden;
+    min-height: 100vh;
+  }
+
+  /* Typography Base Styles */
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+    font-weight: var(--font-bold);
+    line-height: var(--leading-tight);
+    color: var(--color-white-text);
+    margin: 0;
+  }
+
+  h1 {
+    font-size: var(--text-6xl);
+    letter-spacing: var(--tracking-tight);
+  }
+
+  h2 {
+    font-size: var(--text-5xl);
+    letter-spacing: var(--tracking-tight);
+  }
+
+  h3 {
+    font-size: var(--text-4xl);
+  }
+
+  h4 {
+    font-size: var(--text-3xl);
+  }
+
+  h5 {
+    font-size: var(--text-2xl);
+  }
+
+  h6 {
+    font-size: var(--text-xl);
+  }
+
+  p {
+    margin: 0;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+    transition: color var(--duration-base) var(--ease-out);
+  }
+
+  button {
+    font-family: inherit;
+    cursor: pointer;
+    border: none;
+    background: none;
+    padding: 0;
+  }
+
+  /* Focus Styles for Accessibility */
+  *:focus {
+    outline: none;
+  }
+
+  *:focus-visible {
+    outline: 2px solid var(--color-purple-500);
+    outline-offset: 2px;
+    border-radius: var(--radius-sm);
+  }
+
+  /* Remove focus outline for mouse users */
+  *:focus:not(:focus-visible) {
+    outline: none;
+  }
+
+  /* Selection Styles */
+  ::selection {
+    background-color: var(--color-purple-600);
+    color: var(--color-white-text);
+  }
+
+  ::-moz-selection {
+    background-color: var(--color-purple-600);
+    color: var(--color-white-text);
+  }
+
+  /* Custom Scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: var(--color-dark-900);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: var(--color-purple-700);
+    border-radius: var(--radius-full);
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--color-purple-600);
+  }
+
+  /* Form Elements Base Styles */
+  input,
+  textarea,
+  select {
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    color: inherit;
+  }
+
+  /* Image Defaults */
+  img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
 }
 
-html {
-  scroll-behavior: smooth;
-}
+/* Utility Classes */
+@layer utilities {
+  /* Skip to Content Link for Accessibility */
+  .skip-to-content {
+    position: absolute;
+    top: -100px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--color-purple-600);
+    color: var(--color-white-text);
+    padding: var(--space-4) var(--space-8);
+    font-weight: var(--font-bold);
+    z-index: 9999;
+    border-radius: var(--radius-lg);
+    transition: top var(--duration-base) var(--ease-out);
+  }
 
-body {
-  background: #0d0d0f;
-  color: #f9fafb;
-  font-family: "Inter", system-ui, sans-serif;
-  overflow-x: hidden;
-}
+  .skip-to-content:focus {
+    top: var(--space-4);
+  }
 
-::-webkit-scrollbar {
-  width: 5px;
-}
+  /* Screen Reader Only */
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+  }
 
-::-webkit-scrollbar-track {
-  background: #0d0d0f;
-}
+  /* Font Families */
+  .font-display {
+    font-family: var(--font-display);
+  }
 
-::-webkit-scrollbar-thumb {
-  background: #7c3aed;
-  border-radius: 3px;
-}
+  .font-sans {
+    font-family: var(--font-sans);
+  }
 
-@keyframes ticker-scroll {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
-}
+  /* Animations */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
 
-.ticker-track {
-  animation: ticker-scroll 25s linear infinite;
-  display: flex;
-  white-space: nowrap;
-  width: max-content;
-}
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
 
-.ticker-track:hover {
-  animation-play-state: paused;
-}
+  @keyframes slideInRight {
+    from {
+      opacity: 0;
+      transform: translateX(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
 
-@keyframes float {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-12px); }
-}
+  @keyframes pulse {
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.5;
+    }
+  }
 
-.float-anim {
-  animation: float 5s ease-in-out infinite;
-}
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-12px);
+    }
+  }
 
-.gradient-text {
-  background: linear-gradient(135deg, #7c3aed, #f87171);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
+  .animate-fade-in {
+    animation: fadeIn var(--duration-slow) var(--ease-out);
+  }
 
-.hero-gradient-text {
-  background: linear-gradient(135deg, #a78bfa 0%, #f87171 60%, #fbbf24 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  .animate-fade-in-up {
+    animation: fadeInUp var(--duration-slow) var(--ease-out);
+  }
+
+  .animate-slide-in-right {
+    animation: slideInRight var(--duration-slow) var(--ease-out);
+  }
+
+  .animate-pulse {
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+
+  .float-anim {
+    animation: float 5s ease-in-out infinite;
+  }
+
+  /* Ticker Animation */
+  @keyframes ticker-scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+
+  .ticker-track {
+    animation: ticker-scroll 25s linear infinite;
+    display: flex;
+    white-space: nowrap;
+    width: max-content;
+  }
+
+  .ticker-track:hover {
+    animation-play-state: paused;
+  }
 }
