@@ -3,16 +3,88 @@
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="NOVA — Modern Fashion & Lifestyle. Style that speaks for itself." />
-    <meta name="theme-color" content="#0d0d0f" />
-    <title>NOVA — Modern Fashion &amp; Lifestyle</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#18181b" />
+    <meta name="color-scheme" content="dark" />
+
+    <title>NOVA — retail e-commerce fashion</title>
+    <meta name="description" content="NOVA is a luxury fashion destination — obsidian tailoring meets gold-threaded details. Discover ready-to-wear, accessories and footwear curated for the modern wardrobe." />
+
+    <link rel="canonical" href="https://nova-fashion.example.com/" />
+
+    <!-- Preconnect & Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Inter:wght@400;500&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Syne:ital,wght@0,400..800;1,400..800&family=Inter:wght@100..900&display=swap"
       rel="stylesheet"
     />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="NOVA" />
+    <meta property="og:title" content="NOVA — retail e-commerce fashion" />
+    <meta property="og:description" content="Luxury obsidian tailoring meets gold-threaded details. Ready-to-wear, accessories and footwear curated for the modern wardrobe." />
+    <meta property="og:url" content="https://nova-fashion.example.com/" />
+    <meta property="og:image" content="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=1200&h=630&fit=crop&q=80" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="NOVA — luxury fashion destination" />
+    <meta property="og:locale" content="en_US" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="NOVA — retail e-commerce fashion" />
+    <meta name="twitter:description" content="Luxury obsidian tailoring meets gold-threaded details. Ready-to-wear, accessories and footwear curated for the modern wardrobe." />
+    <meta name="twitter:image" content="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=1200&h=630&fit=crop&q=80" />
+    <meta name="twitter:image:alt" content="NOVA — luxury fashion destination" />
+    <meta name="twitter:site" content="@novaofficial" />
+    <meta name="twitter:creator" content="@novaofficial" />
+
+    <!-- Apple Touch Icon -->
+    <link rel="apple-touch-icon" href="/favicon.svg" />
+
+    <!-- JSON-LD: Organization + Store -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "ClothingStore",
+        "name": "NOVA",
+        "alternateName": "NOVA Fashion",
+        "url": "https://nova-fashion.example.com/",
+        "logo": "https://nova-fashion.example.com/favicon.svg",
+        "description": "Luxury obsidian tailoring meets gold-threaded details. Ready-to-wear, accessories and footwear curated for the modern wardrobe.",
+        "image": "https://nova-fashion.example.com/og-image.jpg",
+        "telephone": "+1-888-668-2000",
+        "priceRange": "$$",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "14 Hanbury Street",
+          "addressLocality": "London",
+          "postalCode": "E1 6QR",
+          "addressCountry": "GB"
+        },
+        "sameAs": [
+          "https://instagram.com/novaofficial",
+          "https://tiktok.com/@novaofficial",
+          "https://pinterest.com/novaofficial"
+        ],
+        "openingHoursSpecification": [
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+            "opens": "09:00",
+            "closes": "18:00"
+          },
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": "Saturday",
+            "opens": "10:00",
+            "closes": "16:00"
+          }
+        ]
+      }
+    </script>
   </head>
   <body>
     <div id="root"></div>
